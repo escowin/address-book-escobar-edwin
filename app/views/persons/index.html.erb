@@ -1,0 +1,9 @@
+<h1>People</h1>
+<ul>
+    <% @persons.each do |person| %>
+        <li>
+            <%= person.firstname %>
+            <%= person.lastname %>
+        </li>
+    <% end%>
+</ul>

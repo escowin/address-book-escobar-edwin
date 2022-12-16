@@ -1,6 +1,8 @@
 Rails.application.routes.draw do
-  # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
+  # persons index is the default view
+  root "persons#index"
 
-  # Defines the root path route ("/")
-  # root "articles#index"
+  # CRUD operations
+  # - read | getting the individuals in contacts.
+  get "/persons", to: "persons#index" # controller | ./controllers/persons_controller.rb 
 end
