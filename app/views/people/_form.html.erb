@@ -1,0 +1,54 @@
+
+<%= form_with model: person do |form| %>
+    <div>
+        <%= form.label "First name" %>
+        <%= form.text_field :firstname %>
+        <% person.errors.full_messages_for(:firstname).each do |message| %>
+            <div><%= message %></div>
+        <% end %>
+    </div>
+
+    <div>
+        <%= form.label "Middle name" %>
+        <%= form.text_field :middlename %>
+        <% person.errors.full_messages_for(:middlename).each do |message| %>
+            <div><%= message %></div>
+        <% end %>
+    </div>
+
+    <div>
+        <%= form.label "Last name" %>
+        <%= form.text_field :lastname %>
+        <% person.errors.full_messages_for(:lastname).each do |message| %>
+            <div><%= message %></div>
+        <% end %>
+    </div>
+
+    <div>
+        <%= form.label :ssn %>
+        <%= form.text_field :ssn %>
+        <% person.errors.full_messages_for(:ssn).each do |message| %>
+            <div><%= message %></div>
+        <% end %>
+    </div>
+
+    <div>
+        <%= form.label "Birth date" %>
+        <%= form.text_field :dob %>
+        <% person.errors.full_messages_for(:dob).each do |message| %>
+            <div><%= message %></div>
+        <% end %>
+    </div>
+
+    <div>
+        <%= form.label :comment %>
+        <%= form.text_field :comment %>
+        <% person.errors.full_messages_for(:comment).each do |message| %>
+            <div><%= message %></div>
+        <% end %>
+    </div>
+
+    <div>
+        <%= form.submit %>
+    </div>
+<% end %>

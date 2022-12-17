@@ -1,7 +1,7 @@
 # MVC | controller
 class PeopleController < ApplicationController
   # CRUD | get routes
-  def index # view | ./views/persons/index.html.erb
+  def index # view | ./views/people/index.html.erb
     @people = Person.all # fetch person db request | displays the list of people
   end
 
@@ -10,8 +10,8 @@ class PeopleController < ApplicationController
   end
 
   # CRUD | post routes
-  # - instantiates new person; action maps to GET /people/new
-  def new 
+  def new # view | ./views/people/new.html.erb
+    # instantiates new person; action maps to GET /people/new
     @person = Person.new
   end
 
@@ -24,6 +24,22 @@ class PeopleController < ApplicationController
       redirect_to @person
     else
       render :new, status: :unprocessable_entity
+    end
+  end
+
+  # CRUD | update routes.
+  def edit # view | ./views/people/edit.html.erb
+    # fetches person from database, stores values in @person for form building. 
+    @person = Person.find(params[:id])
+  end
+
+  def update
+    @person = Person.find(params[:id])
+
+    if @person.update(person_params)
+      redirect_to @person
+    else
+      render :edit, status: :unprocessable_entity
     end
   end
 
