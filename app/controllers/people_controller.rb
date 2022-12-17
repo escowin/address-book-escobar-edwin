@@ -1,6 +1,6 @@
 # MVC | controller
 class PeopleController < ApplicationController
-  # CRUD | read
+  # CRUD | get routes
   def index # view | ./views/persons/index.html.erb
     @people = Person.all # fetch person db request | displays the list of people
   end
@@ -9,16 +9,17 @@ class PeopleController < ApplicationController
     @person = Person.find(params[:id])
   end
 
-  # CRUD | create
-  # - instantiates new person
-  def new
+  # CRUD | post routes
+  # - instantiates new person; action maps to GET /people/new
+  def new 
     @person = Person.new
   end
 
-  # - instantiates with listed values & attempts to save. temp dummy values
-  def create
+  def create 
+    # instantiates with person parameter values
     @person = Person.new(person_params)
-
+    
+    # attempts to save person; action maps to POST /people; checks validations
     if @person.save
       redirect_to @person
     else
