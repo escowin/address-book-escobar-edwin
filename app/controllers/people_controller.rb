@@ -1,8 +1,8 @@
 # MVC | controller
-class PersonsController < ApplicationController
+class PeopleController < ApplicationController
   # CRUD | read
   def index # view | ./views/persons/index.html.erb
-    @persons = Person.all # fetch person db request | displays the list of people
+    @people = Person.all # fetch person db request | displays the list of people
   end
 
   def show
