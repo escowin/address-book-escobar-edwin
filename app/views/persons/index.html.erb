@@ -2,8 +2,8 @@
 <ul>
     <% @persons.each do |person| %>
         <li>
-            <%= person.firstname %>
-            <%= person.lastname %>
+            <%= link_to person.firstname + " " + person.lastname, person %>
+
         </li>
-    <% end%>
+    <% end %>
 </ul>
