@@ -1,0 +1,55 @@
+<h1>Create new contact</h1>
+<%# error : undefined method 'people_path' for ActionView %>
+<%= form_with model: @person do |form| %>
+    <div>
+        <%= form.label :firstname %>
+        <%= form.text_field :firstname %>
+        <% @person.errors.full_message_for(:firstname).each do |message| %>
+            <div><%= message %></div>
+        <% end %>
+    </div>
+
+    <div>
+        <%= form.label :middlename %>
+        <%= form.text_field :middlename %>
+        <% @person.errors.full_message_for(:middlename).each do |message| %>
+            <div><%= message %></div>
+        <% end %>
+    </div>
+
+    <div>
+        <%= form.label :lastname %>
+        <%= form.text_field :lastname %>
+        <% @person.errors.full_message_for(:lastname).each do |message| %>
+            <div><%= message %></div>
+        <% end %>
+    </div>
+
+    <div>
+        <%= form.label :ssn %>
+        <%= form.text_field :ssn %>
+        <% @person.errors.full_message_for(:ssn).each do |message| %>
+            <div><%= message %></div>
+        <% end %>
+    </div>
+
+    <div>
+        <%= form.label :dob %>
+        <%= form.text_field :dob %>
+        <% @person.errors.full_message_for(:dob).each do |message| %>
+            <div><%= message %></div>
+        <% end %>
+    </div>
+
+    <div>
+        <%= form.label :comment %>
+        <%= form.text_field :comment %>
+        <% @person.errors.full_message_for(:comment).each do |message| %>
+            <div><%= message %></div>
+        <% end %>
+    </div>
+
+    <div>
+        <%= form.submit %>
+    </div>
+<% end %>
