@@ -21,6 +21,10 @@
 
 <ul>
     <li><%= link_to "Edit contact", edit_person_path %></li>
+    <li><%= link_to "Delete contact", person_path(@person), data: {
+        turbo_method: :delete,
+        turbo_confirm: "Confirm deletion"
+        } %></li>
     <li><%= link_to "Address book", "/" %></li>
 </ul>
 

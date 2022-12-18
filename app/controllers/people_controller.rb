@@ -2,10 +2,12 @@
 class PeopleController < ApplicationController
   # CRUD | get routes
   def index # view | ./views/people/index.html.erb
-    @people = Person.all # fetch person db request | displays the list of people
+    # gets all people
+    @people = Person.all
   end
 
   def show
+    # gets a specfici person
     @person = Person.find(params[:id])
   end
 
@@ -27,20 +29,31 @@ class PeopleController < ApplicationController
     end
   end
 
-  # CRUD | update routes.
+  # CRUD | update routes
   def edit # view | ./views/people/edit.html.erb
     # fetches person from database, stores values in @person for form building. 
     @person = Person.find(params[:id])
   end
 
-  def update
+  def update # re-fetches person from db
     @person = Person.find(params[:id])
 
-    if @person.update(person_params)
+    # updates person with parameter-filtered data submitted from form
+    if @person.update(person_params) #
       redirect_to @person
     else
       render :edit, status: :unprocessable_entity
     end
+  end
+
+  # CRUD | delete route
+  def destroy
+    # fetches & deletes person
+    @person = Person.find(params[:id])
+    @person.destroy
+
+    # browser redirect
+    redirect_to root_path, status: :see_other
   end
 
   private
