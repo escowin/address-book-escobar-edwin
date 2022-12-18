@@ -4,5 +4,9 @@ Rails.application.routes.draw do
 
   # CRUD operations
   # - persons mvc, ./controllers/persons_controller.rb
-  resources :people
+  resources :people do
+    resources :addresses
+    resources :emails
+    resources :phone_numbers
+  end
 end
