@@ -2,9 +2,10 @@ Rails.application.routes.draw do
   # persons index is the default view
   root "people#index"
 
-  # CRUD operations
-  # - persons mvc, ./controllers/persons_controller.rb
+  # CRUD resources
+  # people | ./controllers/persons_controller.rb
   resources :people do
+    # nested resources
     resources :addresses
     resources :emails
     resources :phone_numbers
