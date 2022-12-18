@@ -32,115 +32,36 @@
 
 <section>
     <article>
-        <h2>Address</h2>
-        <% @person.addresses.each do |address| %>
-            <div>
-                <strong>Street</strong>
-                <%= address.street %>
-            </div>
-            <div>
-                <strong>Town</strong>
-                <%= address.town %>
-            </div>
-            <div>
-                <strong>Zip Code</strong>
-                <%= address.zipcode %>
-            </div>
-            <div>
-                <strong>State</strong>
-                <%= address.state %>
-            </div>
-            <div>
-                <strong>Country</strong>
-                <%= address.country %>
-            </div>
-        <% end %>
+        <h2>Addresses</h2>
+        <%= render @person.addresses %>
     </article>
 
     <article>
         <h2>Add an address</h2>
-        <%= form_with model: [ @person, @person.addresses.build ] do |form| %>
-            <div>
-                <%= form.label :street %>
-                <%= form.text_field :street %>
-            </div>
-            <div>
-                <%= form.label :town %>
-                <%= form.text_field :town %>
-            </div>
-            <div>
-                <%= form.label :zipcode %>
-                <%= form.text_field :zipcode %>
-            </div>
-            <div>
-                <%= form.label :state %>
-                <%= form.text_field :state %>
-            </div>
-            <div>
-                <%= form.label :country %>
-                <%= form.text_field :country %>
-            </div>
-            <div>
-                <%= form.submit %>
-            </div>
-        <% end %>
+        <%= render 'addresses/form' %>
     </article>
 </section>
 
 <section>
     <article>
         <h2>Emails</h2>
-        <% @person.emails.each do |email| %>
-            <div>
-                <p><%= email.email %></p>
-                <p><%= email.comment %></p>
-            </div>
-        <% end %>
+        <%= render @person.emails %>
     </article>
 
     <article>
         <h2>Add an email</h2>
-        <%= form_with model: [ @person, @person.emails.build ] do |form| %>
-            <div>
-                <%= form.label :email %>
-                <%= form.text_field :email %>
-            </div>
-            <div>
-                <%= form.label :comment %>
-                <%= form.text_field :comment %>
-            </div>
-            <div>
-                <%= form.submit %>
-            </div>
-        <% end %>
+        <%= render 'emails/form' %>
     </article>
 </section>
 
 <section>
     <article>
         <h2>Phone numbers</h2>
-        <% @person.phone_numbers.each do |phone_number| %>
-            <div>
-                <p><%= phone_number.phone %></p>
-                <p><%= phone_number.comment %></p>
-            </div>
-        <% end %>
+        <%= render @person.phone_numbers %>
     </article>
 
     <article>
         <h2>Add a phone number</h2>
-        <%= form_with model: [ @person, @person.phone_numbers.build ] do |form| %>
-            <div>
-                <%= form.label :phone %>
-                <%= form.text_field :phone %>
-            </div>
-            <div>
-                <%= form.label :comment %>
-                <%= form.text_field :comment %>
-            </div>
-            <div>
-                <%= form.submit %>
-            </div>
-        <% end %>
+        <%= render 'phone_numbers/form' %>
     </article>
 </section>
