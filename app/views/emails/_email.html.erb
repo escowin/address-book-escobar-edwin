@@ -2,4 +2,11 @@
     <p><%= email.email %></p>
     <p><%= email.comment %></p>
 </div>
+
+<button>
+    <%= link_to "Delete", [email.person, email], data: {
+        turbo_method: :delete,
+        turbo_confirm: "Delete email?"
+        } %>
+</button>
 <br/>

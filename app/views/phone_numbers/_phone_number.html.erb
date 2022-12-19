@@ -2,4 +2,11 @@
     <p><%= phone_number.phone %></p>
     <p><%= phone_number.comment %></p>
 </div>
+
+<button>
+    <%= link_to "Delete", [phone_number.person, phone_number], data: {
+        turbo_method: :delete,
+        turbo_confirm: "Delete phone number?"
+        } %>
+</button>
 <br/>

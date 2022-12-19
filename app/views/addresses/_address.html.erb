@@ -22,4 +22,11 @@
     <strong>Country</strong>
     <%= address.country %>
 </div>
+
+<button>
+    <%= link_to "Delete", [address.person, address], data: {
+        turbo_method: :delete,
+        turbo_confirm: "Delete address?"
+        } %>
+</button>
 <br/>
