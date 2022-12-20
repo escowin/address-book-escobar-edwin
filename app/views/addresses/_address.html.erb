@@ -24,6 +24,10 @@
 </div>
 
 <button>
+    <%= link_to "Edit", edit_person_address_path(@person, address) %>
+</button>
+
+<button>
     <%= link_to "Delete", [address.person, address], data: {
         turbo_method: :delete,
         turbo_confirm: "Delete address?"

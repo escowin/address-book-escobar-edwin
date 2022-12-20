@@ -4,6 +4,10 @@
 </div>
 
 <button>
+    <%= link_to "Edit", edit_person_email_path(@person, email) %>
+</button>
+
+<button>
     <%= link_to "Delete", [email.person, email], data: {
         turbo_method: :delete,
         turbo_confirm: "Delete email?"

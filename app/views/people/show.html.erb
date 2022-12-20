@@ -35,31 +35,25 @@
         <h2>Addresses</h2>
         <%= render @person.addresses %>
     </article>
-
-    <article>
-        <h2>Add an address</h2>
-        <%= render 'addresses/form' %>
-    </article>
-</section>
-
-<section>
     <article>
         <h2>Emails</h2>
         <%= render @person.emails %>
     </article>
-
-    <article>
-        <h2>Add an email</h2>
-        <%= render 'emails/form' %>
+        <article>
+        <h2>Phone numbers</h2>
+        <%= render @person.phone_numbers %>
     </article>
 </section>
 
 <section>
     <article>
-        <h2>Phone numbers</h2>
-        <%= render @person.phone_numbers %>
+        <h2>Add an address</h2>
+        <%= render 'addresses/form' %>
     </article>
-
+    <article>
+        <h2>Add an email</h2>
+        <%= render 'emails/form' %>
+    </article>
     <article>
         <h2>Add a phone number</h2>
         <%= render 'phone_numbers/form' %>

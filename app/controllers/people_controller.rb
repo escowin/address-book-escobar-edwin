@@ -1,19 +1,17 @@
 # MVC | controller
 class PeopleController < ApplicationController
-  # CRUD | get routes
+  # crud | read get routes
   def index # view | ./views/people/index.html.erb
     # gets all people
     @people = Person.all
   end
 
   def show
-    # gets a specfici person
     @person = Person.find(params[:id])
   end
 
-  # CRUD | post routes
+  # crud | create post routes
   def new # view | ./views/people/new.html.erb
-    # instantiates new person; action maps to GET /people/new
     @person = Person.new
   end
 
@@ -29,16 +27,13 @@ class PeopleController < ApplicationController
     end
   end
 
-  # CRUD | update routes
+  # crud | update routes
   def edit # view | ./views/people/edit.html.erb
-    # fetches person from database, stores values in @person for form building. 
     @person = Person.find(params[:id])
   end
 
   def update # re-fetches person from db
     @person = Person.find(params[:id])
-
-    # updates person with parameter-filtered data submitted from form
     if @person.update(person_params) #
       redirect_to @person
     else
@@ -46,7 +41,7 @@ class PeopleController < ApplicationController
     end
   end
 
-  # CRUD | delete route
+  # crud | delete route
   def destroy
     # fetches & deletes person
     @person = Person.find(params[:id])

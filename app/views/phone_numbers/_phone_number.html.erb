@@ -4,6 +4,10 @@
 </div>
 
 <button>
+    <%= link_to "Edit", edit_person_phone_number_path(@person, phone_number) %>
+</button>
+
+<button>
     <%= link_to "Delete", [phone_number.person, phone_number], data: {
         turbo_method: :delete,
         turbo_confirm: "Delete phone number?"
