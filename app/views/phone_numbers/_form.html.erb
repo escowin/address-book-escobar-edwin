@@ -1,13 +1,15 @@
 <%= form_with model: [ @person, @person.phone_numbers.build ] do |form| %>
-    <div>
+    <article class="container">
         <%= form.label :phone %>
-        <%= form.text_field :phone %>
-    </div>
-    <div>
+        <%= form.text_field :phone, class:"form-control" %>
+    </article>
+
+    <article class="container">
         <%= form.label :comment %>
-        <%= form.text_field :comment %>
-    </div>
-    <div>
-        <%= form.submit %>
-    </div>
+        <%= form.text_field :comment, class:"form-control" %>
+    </article>
+
+    <article class="py-3 px-2">
+        <%= form.submit class:"btn btn-dark w-100" %>
+    </article>
 <% end %>

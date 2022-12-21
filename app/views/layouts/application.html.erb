@@ -10,7 +10,12 @@
     <%= javascript_importmap_tags %>
   </head>
 
-  <body>
-    <%= yield %>
+  <body class="bg-secondary">
+    <header class="navbar navbar-dark bg-dark sticky-top">
+      <h1><%= link_to "Address book", "/", class:"text-decoration-none dark text-light" %></h1>
+    </header>
+    <main class="d-flex flex-column justify-contents-center mx-1">
+     <%= yield %>
+    </main>
   </body>
 </html>

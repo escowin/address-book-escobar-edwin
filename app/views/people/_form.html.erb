@@ -1,54 +1,62 @@
 
 <%= form_with model: person do |form| %>
-    <div>
-        <%= form.label "First name" %>
-        <%= form.text_field :firstname %>
-        <% person.errors.full_messages_for(:firstname).each do |message| %>
-            <div><%= message %></div>
-        <% end %>
-    </div>
+    <section class="mb-3 border rounded-5 p-3" id="name-section">
+        <h3 class="form-label">Name</h3>
+        <article class="mb-3 col">
+                <%= form.label "First", class: "d-none" %>
+                <%= form.text_field :firstname, class:"form-control", placeholder: "First" %>
+                <% person.errors.full_messages_for(:firstname).each do |message| %>
+                    <div><%= message %></div>
+                <% end %>
+        </article>
 
-    <div>
-        <%= form.label "Middle name" %>
-        <%= form.text_field :middlename %>
-        <% person.errors.full_messages_for(:middlename).each do |message| %>
-            <div><%= message %></div>
-        <% end %>
-    </div>
+        <article class="mb-3 col">
+            <%= form.label "Middle", class: "d-none" %>
+            <%= form.text_field :middlename, class:"form-control", placeholder: "Middle (optional)" %>
+            <% person.errors.full_messages_for(:middlename).each do |message| %>
+                <div><%= message %></div>
+            <% end %>
+        </article>
 
-    <div>
-        <%= form.label "Last name" %>
-        <%= form.text_field :lastname %>
-        <% person.errors.full_messages_for(:lastname).each do |message| %>
-            <div><%= message %></div>
-        <% end %>
-    </div>
+        <article class="mb-3 col">
+            <%= form.label "Last", class: "d-none" %>
+            <%= form.text_field :lastname, class:"form-control", placeholder: "Last" %>
+            <% person.errors.full_messages_for(:lastname).each do |message| %>
+                <div><%= message %></div>
+            <% end %>
+        </article>
+    </section>
 
-    <div>
-        <%= form.label :ssn %>
-        <%= form.text_field :ssn %>
-        <% person.errors.full_messages_for(:ssn).each do |message| %>
-            <div><%= message %></div>
-        <% end %>
-    </div>
+    <section class="mb-3 border rounded-5 p-3" id="details-section">
+        <h3>Details</h3>
+        <div class="row">
+            <article class="mb-3 col-7">
+                <%= form.label :ssn, class: "d-none" %>
+                <%= form.text_field :ssn, class:"form-control text-center", placeholder: "S-S-N" %>
+                <% person.errors.full_messages_for(:ssn).each do |message| %>
+                    <div><%= message %></div>
+                <% end %>
+            </article>
 
-    <div>
-        <%= form.label "Birth date" %>
-        <%= form.text_field :dob %>
-        <% person.errors.full_messages_for(:dob).each do |message| %>
-            <div><%= message %></div>
-        <% end %>
-    </div>
+            <article class="mb-3 col-5">
+                <%= form.label "Birth date", class: "d-none" %>
+                <%= form.text_field :dob, class:"form-control text-center", placeholder: "Date of birth" %>
+                <% person.errors.full_messages_for(:dob).each do |message| %>
+                    <div><%= message %></div>
+                <% end %>
+            </article>
+        </div>
+    </section>
 
-    <div>
-        <%= form.label :comment %>
-        <%= form.text_field :comment %>
+    <section class="mb-3 border rounded-5 p-3" id="comment-section">
+        <%= form.label :comment, class: "form-label h3" %>
+        <%= form.text_field :comment, class:"form-control" %>
         <% person.errors.full_messages_for(:comment).each do |message| %>
             <div><%= message %></div>
         <% end %>
-    </div>
+    </section>
 
-    <div>
-        <%= form.submit %>
-    </div>
+    <section id="submit-section" class="px-3">
+        <%= form.submit class:"btn btn-dark w-100" %>
+    </section>
 <% end %>

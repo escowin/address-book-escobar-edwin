@@ -1,16 +1,17 @@
-<div>
-    <p><%= phone_number.phone %></p>
-    <p><%= phone_number.comment %></p>
-</div>
+<article>
+    <strong class="ps-1"><%= phone_number.phone %></strong>
+    <p class="ps-2"><%= phone_number.comment %></p>
+</article>
 
-<button>
-    <%= link_to "Edit", edit_person_phone_number_path(@person, phone_number) %>
-</button>
+<article class="w-100 d-flex justify-content-start ps-0">
+    <button class="btn btn-dark mx-1">
+        <%= link_to "Edit", edit_person_phone_number_path(@person, phone_number), class:"text-decoration-none text-light" %>
+    </button>
 
-<button>
-    <%= link_to "Delete", [phone_number.person, phone_number], data: {
-        turbo_method: :delete,
-        turbo_confirm: "Delete phone number?"
-        } %>
-</button>
-<br/>
+    <button class="btn btn-dark mx-1">
+        <%= link_to "Delete", [phone_number.person, phone_number], class:"text-decoration-none text-light", data: {
+            turbo_method: :delete,
+            turbo_confirm: "Delete phone number?"
+            } %>
+    </button>
+</article>

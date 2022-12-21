@@ -1,36 +1,37 @@
-<div>
+<article class="w-100">
     <strong>Street</strong>
-    <%= address.street %>
-</div>
+    <p class="ps-1"><%= address.street %></p>
+</article>
 
-<div>
-    <strong>Town</strong>
-    <%= address.town %>
-</div>
+<article class="w-50">
+    <strong>City</strong>
+    <p class="ps-1"><%= address.town %></p>
+</article>
 
-<div>
+<article class="w-25">
     <strong>Zip Code</strong>
-    <%= address.zipcode %>
-</div>
+    <p class="ps-1"><%= address.zipcode %></p>
+</article>
 
-<div>
+<article class="w-25">
     <strong>State</strong>
-    <%= address.state %>
-</div>
+    <p class="ps-1"><%= address.state %></p>
+</article>
 
-<div>
+<article class="w-100">
     <strong>Country</strong>
-    <%= address.country %>
-</div>
+    <p class="ps-1"><%= address.country %></p>
+</article>
 
-<button>
-    <%= link_to "Edit", edit_person_address_path(@person, address) %>
-</button>
+<article class="w-100 d-flex justify-content-start ps-0">
+    <button class="btn btn-dark mx-1">
+        <%= link_to "Edit", edit_person_address_path(@person, address), class:"text-decoration-none text-light" %>
+    </button>
 
-<button>
-    <%= link_to "Delete", [address.person, address], data: {
-        turbo_method: :delete,
-        turbo_confirm: "Delete address?"
-        } %>
-</button>
-<br/>
+    <button class="btn btn-dark mx-1">
+        <%= link_to "Delete", [address.person, address], class:"text-decoration-none text-light", data: {
+            turbo_method: :delete,
+            turbo_confirm: "Delete address?"
+            } %>
+    </button>
+</article>

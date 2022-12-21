@@ -1,11 +1,10 @@
-<h1>People</h1>
-<ul>
+<h1 class="mx-3">People</h1>
+<ul class="list-group">
     <% @people.each do |person| %>
-        <li>
-            <%= link_to person.firstname + " " + person.lastname, person %>
-
+        <li class="list-group-item bg-transparent">
+            <%= link_to person.firstname + " " + person.lastname, person, class:"text-decoration-none text-light fw-semibold" %>
         </li>
     <% end %>
+    <%= link_to "+ Add contact", new_person_path, class:"mx-3 text-decoration-none text-dark fw-semibold fs-4" %>
 </ul>
 
-<%= link_to "Add contact", new_person_path %>

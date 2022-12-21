@@ -1,16 +1,17 @@
-<div>
-    <p><%= email.email %></p>
-    <p><%= email.comment %></p>
-</div>
+<article>
+    <strong class="ps-1"><%= email.email %></strong>
+    <p class="ps-2"><%= email.comment %></p>
+</article>
 
-<button>
-    <%= link_to "Edit", edit_person_email_path(@person, email) %>
-</button>
+<article class="w-100 d-flex justify-content-start ps-0">
+    <button class="btn btn-dark mx-1">
+        <%= link_to "Edit", edit_person_email_path(@person, email), class:"text-decoration-none text-light" %>
+    </button>
 
-<button>
-    <%= link_to "Delete", [email.person, email], data: {
-        turbo_method: :delete,
-        turbo_confirm: "Delete email?"
-        } %>
-</button>
-<br/>
+    <button class="btn btn-dark mx-1">
+        <%= link_to "Delete", [email.person, email], class:"text-decoration-none text-light", data: {
+            turbo_method: :delete,
+            turbo_confirm: "Delete email?"
+            } %>
+    </button>
+</article>

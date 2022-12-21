@@ -1,51 +1,48 @@
-<section>
-    <h1><%= @person.firstname %> <%= @person.lastname %>
-    <div>
-        <p>First name</p>
-        <p><%= @person.firstname %></p>
+<h1>Contact</h1>
+<section id="person-section" class="container d-flex flex-wrap border rounded-5 p-3 mb-3">
+    <h2 class="w-100"><%= @person.firstname %> <%= @person.middlename %> <%= @person.lastname %></h2>
+    <article class="w-50">
+        <p class="fw-semibold mb-1">SSN</p>
+        <p class="ps-2"><%= @person.ssn %></p>
+    </article>
 
-        <p>Middle name</p>
-        <p><%= @person.middlename %></p>
+    <article class="w-auto">
+        <p class="fw-semibold mb-1">Birth date</p>
+        <p class="ps-2"><%= @person.dob %></p>
+    </article>
 
-        <p>Last name</p>
-        <p><%= @person.lastname %></p>
+    <article class="w-100 mb-3">
+        <p class="fw-semibold mb-1">Comment</p>
+        <p class="ps-3"><%= @person.comment %></p>
+    </article>
 
-        <p>SSN</p>
-        <p><%= @person.ssn %></p>
-
-        <p>Birth date</p>
-        <p><%= @person.dob %></p>
-
-        <p id="comment">Comment</p>
-        <p><%= @person.comment %></p>
-    </div>
-
-    <ul>
-        <li><%= link_to "Edit contact", edit_person_path %></li>
-        <li><%= link_to "Delete contact", person_path(@person), data: {
+    <article class="flex-grow-1 d-flex justify-content-start ps-0">
+        <button class="btn btn-dark mx-1"><%= link_to "Edit", edit_person_path, class:"text-decoration-none text-light" %></li>
+        <button class="btn btn-dark mx-1"><%= link_to "Delete", person_path(@person), class:"text-decoration-none text-light", data: {
             turbo_method: :delete,
             turbo_confirm: "Confirm deletion"
             } %></li>
-        <li><%= link_to "Address book", "/" %></li>
-    </ul>
+    </article>
 </section>
 
-<section>
-    <article>
-        <h2>Addresses</h2>
+<section id="contact-section">
+    <article class="container d-flex flex-wrap border rounded-5 p-3 mb-3">
+        <h2 class="w-100">Addresses</h2>
         <%= render @person.addresses %>
     </article>
-    <article>
+
+    <article class="container d-flex flex-column border rounded-5 p-3 mb-3">
         <h2>Emails</h2>
         <%= render @person.emails %>
     </article>
-        <article>
+
+    <article class="container d-flex flex-column border rounded-5 p-3 mb-3">
         <h2>Phone numbers</h2>
         <%= render @person.phone_numbers %>
     </article>
 </section>
 
-<section>
+<section id="forms-section" class="container d-flex flex-column border rounded-5 p-3 mb-3">
     <article>
         <h2>Add an address</h2>
         <%= render 'addresses/form' %>
