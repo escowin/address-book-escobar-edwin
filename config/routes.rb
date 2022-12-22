@@ -1,6 +1,9 @@
 Rails.application.routes.draw do
   # persons index is the default view
-  root "people#index"
+  # root "people#index"
+  root to: "home#index"
+
+  get "sign_up", to: "registration#new"
 
   # CRUD entities
   # people | ./controllers/persons_controller.rb
