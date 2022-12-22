@@ -1,9 +1,13 @@
-<nav>
-      <h1><%= link_to "Address book", "/", class:"text-decoration-none dark text-light" %></h1>
+<h1>
+  <%= link_to "Address book", "/", class:"text-decoration-none dark text-light" %>
+</h1>
 
-      <% if Current.user %>
-        <p>Logged in as: <%= Current.user.email %></p>
-
-        <%= button_to "Logout", logout_path, method: :delete, class:"btn btn-dark" %>
-      <% end%>
+<nav class="d-flex justify-content-space-around align-items-center">
+  <% if Current.user %>
+    <p class="text-light mb-0"><%= Current.user.email %></p>
+    <%= button_to "Logout", logout_path, method: :delete, class:"btn btn-dark" %>
+  <% else %>
+    <%= link_to "Sign up", sign_up_path, class:"btn btn-dark" %>
+    <%= link_to "Log in", sign_in_path, class:"btn btn-dark" %>
+  <% end%>
 </nav>
