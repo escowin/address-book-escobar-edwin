@@ -1,8 +1,8 @@
 # MVC | controller
 class PeopleController < ApplicationController
+
   # crud | read get routes
   def index # view | ./views/people/index.html.erb
-    # gets all people
     @people = Person.all
   end
 
