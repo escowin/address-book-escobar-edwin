@@ -1,0 +1,17 @@
+<%= form_with url: sign_in_path do |form| %>
+    <section class="container d-flex flex-column border rounded-5 p-3 mb-3 w-75">
+        <article class="mb-3">
+            <%= form.label "Email", class: "form-label h3" %>
+            <%= form.text_field :email, placeholder: "user@email.com", class:"form-control" %>
+        </article>
+
+        <article class="mb-3">
+            <%= form.label "Password", class: "form-label h3" %>
+            <%= form.password_field :password, placeholder: "Password", class:"form-control" %>
+        </article>
+
+        <article class="mb-3">
+            <%= form.submit "Log in", class:"btn btn-dark w-100" %>
+        </article>
+    </section>
+<% end %>

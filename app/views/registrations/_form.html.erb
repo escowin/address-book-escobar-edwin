@@ -1,5 +1,5 @@
 <%= form_with model: user, url: sign_up_path do |form| %>
-    <section class="d-flex flex-column align-items-center">
+    <section class="container d-flex flex-column align-items-center border rounded-5 p-3 mb-3">
         <% if user.errors.any? %>
             <article class="alert alert-danger w-75">
                 <% user.errors.full_messages.each do |message| %>
