@@ -4,11 +4,11 @@ class Person < ApplicationRecord
     has_many :emails, dependent: :destroy
     has_many :phone_numbers, dependent: :destroy
 
-    # validates :salutation, presence: true
+    # validates :salutation
     validates :firstname, presence: true
-    # validates :middlename, presence: true
+    # validates :middlename
     validates :lastname, presence: true
-    validates :ssn, length: { maximum: 9 }
-    validates :dob, length: { maximum: 8 }
-    # validates :comment, presence: true
+    # validates :ssn
+    # validates :dob
+    # validates :comment
 end

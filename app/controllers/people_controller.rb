@@ -2,16 +2,16 @@
 class PeopleController < ApplicationController
 
   # crud | read get routes
-  def index # view | ./views/people/index.html.erb
+  def index # view /people/index.html.erb
     @people = Person.all
   end
 
-  def show
+  def show # view /people/show.html.erb
     @person = Person.find(params[:id])
   end
 
   # crud | create post routes
-  def new # view | ./views/people/new.html.erb
+  def new # view | ../people/new.html.erb
     @person = Person.new
   end
 
@@ -28,7 +28,7 @@ class PeopleController < ApplicationController
   end
 
   # crud | update routes
-  def edit # view | ./views/people/edit.html.erb
+  def edit # view | ../people/edit.html.erb
     @person = Person.find(params[:id])
   end
 
