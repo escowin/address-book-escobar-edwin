@@ -3,7 +3,8 @@ Rails.application.routes.draw do
   # root "people#index"
   root to: "home#index"
 
-  get "sign_up", to: "registration#new"
+  get "sign_up", to: "registrations#new"
+  post "sign_up", to: "registrations#create"
 
   # CRUD entities
   # people | ./controllers/persons_controller.rb
