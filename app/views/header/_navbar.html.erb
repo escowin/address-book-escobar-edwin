@@ -1,0 +1,9 @@
+<nav>
+      <h1><%= link_to "Address book", "/", class:"text-decoration-none dark text-light" %></h1>
+
+      <% if Current.user %>
+        <p>Logged in as: <%= Current.user.email %></p>
+
+        <%= button_to "Logout", logout_path, method: :delete, class:"btn btn-dark" %>
+      <% end%>
+</nav>

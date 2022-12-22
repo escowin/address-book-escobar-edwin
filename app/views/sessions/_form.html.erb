@@ -1,5 +1,6 @@
 <%= form_with url: sign_in_path do |form| %>
-    <section class="container d-flex flex-column border rounded-5 p-3 mb-3 w-75">
+    <section class="container d-flex flex-column align-items-center border rounded-5 p-3 my-4 w-75">
+        <h1>Log in</h1>
         <article class="mb-3">
             <%= form.label "Email", class: "form-label h3" %>
             <%= form.text_field :email, placeholder: "user@email.com", class:"form-control" %>

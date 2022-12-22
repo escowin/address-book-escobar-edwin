@@ -1,6 +1,1 @@
 <h1>home test</h1>
-<% if @user %>
-    <p>Logged in as: <%= @user.email %></p>
-
-    <%= button_to "Logout", logout_path, method: :delete, class:"btn btn-dark" %>
-<% end%>
