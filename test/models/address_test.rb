@@ -2,8 +2,10 @@ require "test_helper"
 
 class AddressTest < ActiveSupport::TestCase
 
-  test "adding an address" do
-    address = Address.submitted 
+  test "address count" do
+    assert_equal 2, Address.count
+  end
+
   # test "the truth" do
   #   assert true
   # end
