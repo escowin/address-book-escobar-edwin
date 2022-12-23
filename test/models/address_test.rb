@@ -17,5 +17,4 @@ class AddressTest < ActiveSupport::TestCase
   test "find all by street" do
     assert_equal 2, addresses.length
   end
-  
 end
