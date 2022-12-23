@@ -1,5 +1,9 @@
 <h1>
-  <%= link_to "Address book", "/", class:"text-decoration-none dark text-light" %>
+  <% if Current.user %>
+    <%= link_to "Address book", people_path, class:"text-decoration-none dark text-light" %>
+  <% else %>
+    <%= link_to "Address book", root_path, class:"text-decoration-none dark text-light" %>
+    <% end %>
 </h1>
 
 <nav class="d-flex justify-content-space-around align-items-center">

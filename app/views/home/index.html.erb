@@ -1,2 +1,8 @@
-<h1>home test</h1>
-<%= render 'registrations/new' %>
+<section class="container d-flex flex-column align-items-center my-3 mx-auto border rounded-5 p-5 w-auto">
+    <h1>Address book</h1>
+    <h3>by <%= link_to "Edwin Escobar", "https://github.com/escowin/address-book-edwin-escobar", class: "text-dark" %></h3>
+    <article class="my-3">
+        <%= link_to "Sign up", sign_up_path, class:"btn btn-dark" %>
+        <%= link_to "Log in", sign_in_path, class:"btn btn-dark" %>
+    </article>
+</section>
