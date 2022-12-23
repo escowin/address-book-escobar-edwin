@@ -2,7 +2,10 @@
 <%= form_with model: person do |form| %>
     <section class="mb-3 border rounded-5 p-3" id="name-section">
         <h3 class="form-label">Name</h3>
-        <article class="mb-3 col">
+
+        <article class="mb-3 d-flex">
+                <%= form.select :salutation, ["Mr.", "Ms.", "Mrs.", "Lord", "Lady"], class:"form-control w-auto mx-1" %>
+
                 <%= form.label "First", class: "d-none" %>
                 <%= form.text_field :firstname, class:"form-control", placeholder: "First" %>
                 <% person.errors.full_messages_for(:firstname).each do |message| %>
@@ -40,7 +43,7 @@
 
             <article class="mb-3 col-5">
                 <%= form.label "Birth date", class: "d-none" %>
-                <%= form.text_field :dob, class:"form-control text-center", placeholder: "Date of birth" %>
+                <%= form.date_field :dob, class:"form-control text-center", placeholder: "Date of birth" %>
                 <% person.errors.full_messages_for(:dob).each do |message| %>
                     <div><%= message %></div>
                 <% end %>

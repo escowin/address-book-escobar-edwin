@@ -9,7 +9,7 @@
         <%= form.text_field :town, class:"form-control" %>
     </article>
 
-    <article class="container d-flex">
+    <article class="container d-flex align-items-center">
         <div class="w-25">
             <%= form.label :state %>
             <%= form.text_field :state, class:"form-control" %>
@@ -20,11 +20,11 @@
             <%= form.text_field :zipcode, class:"form-control" %>
         </div>
 
-        <div class="w-auto">
-            <%= form.label :country %>
-            <%= form.text_field :country, class:"form-control" %>
-        </div>
     </article>
+
+    <article class="py-3 px-2">
+            <%= form.label :country %>
+            <%= form.country_select :country, class:"form-control" %>    </article>
 
     <article class="py-3 px-2">
         <%= form.submit class:"btn btn-dark w-100" %>
