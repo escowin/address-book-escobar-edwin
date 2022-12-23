@@ -1,11 +1,11 @@
 # Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  email: MyString
-  comment: MyText
+  email: user@test.com
+  comment: test comment
   person: one
 
 two:
-  email: MyString
-  comment: MyText
+  email: second@test.com
+  comment: second test comment
   person: two

@@ -14,7 +14,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_12_22_015540) do
   create_table "addresses", force: :cascade do |t|
     t.string "street"
     t.string "town"
-    t.string "zipcode"
+    t.integer "zipcode"
     t.string "state"
     t.string "country"
     t.integer "person_id", null: false
@@ -37,7 +37,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_12_22_015540) do
     t.string "firstname"
     t.string "middlename"
     t.string "lastname"
-    t.string "ssn"
+    t.integer "ssn"
     t.string "dob"
     t.text "comment"
     t.datetime "created_at", null: false
@@ -45,7 +45,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_12_22_015540) do
   end
 
   create_table "phone_numbers", force: :cascade do |t|
-    t.string "phone"
+    t.integer "phone"
     t.text "comment"
     t.integer "person_id", null: false
     t.datetime "created_at", null: false
@@ -60,5 +60,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_12_22_015540) do
     t.datetime "updated_at", null: false
   end
 
+  add_foreign_key "addresses", "people"
+  add_foreign_key "emails", "people"
   add_foreign_key "phone_numbers", "people"
 end

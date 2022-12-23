@@ -1,9 +1,19 @@
 # Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  title: MyString
-  body: MyText
-
+  salutation: Mr.
+  firstname: Patrick
+  middlename: S
+  lastname: Bateman
+  ssn: 111-22-3333
+  dob: Nov 1
+  comment: Sea urchin ceviche
+      
 two:
-  title: MyString
-  body: MyText
+  salutation: MyString
+  firstname: MyString
+  middlename: MyString
+  lastname: MyString
+  ssn: MyInteger
+  dob: MyString
+  comment: MyText

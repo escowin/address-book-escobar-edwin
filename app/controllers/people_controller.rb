@@ -47,8 +47,8 @@ class PeopleController < ApplicationController
     @person = Person.find(params[:id])
     @person.destroy
 
-    # browser redirect
-    redirect_to root_path, status: :see_other
+    # browser redirect /people/
+    redirect_to people_path, status: :see_other
   end
 
   private
