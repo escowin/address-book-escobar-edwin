@@ -1,17 +1,17 @@
 # Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  street: MyString
-  town: MyString
-  zipcode: MyString
-  state: MyString
-  country: MyString
+  street: 51st St
+  town: Austin
+  zipcode: 78723
+  state: TX
+  country: USA
   person: one
 
 two:
-  street: MyString
-  town: MyString
-  zipcode: MyString
-  state: MyString
-  country: MyString
+  street: South Congress
+  town: Austin
+  zipcode: null
+  state: TX
+  country: null
   person: two
