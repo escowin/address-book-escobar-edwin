@@ -1,7 +1,7 @@
 <%= form_with model: [ @person, @person.emails.build ] do |form| %>
     <article class="container">
-        <%= form.label :email %>
-        <%= form.text_field :email, class:"form-control" %>
+        <%= form.label :email, "Email (required)" %>
+        <%= form.text_field :email, class:"form-control", placeholder: "user@email.com" %>
     </article>
 
     <article class="container">

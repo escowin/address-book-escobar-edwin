@@ -1,30 +1,31 @@
 <%= form_with model: [ @person, @person.addresses.build ] do |form| %>
     <article class="container">
-        <%= form.label :street %>
-        <%= form.text_field :street, class:"form-control" %>
+        <%= form.label :street, "Street (required)" %>
+        <%= form.text_field :street, class:"form-control", placeholder: "1000 South Congress Ave" %>
     </article>
 
     <article class="container">
-        <%= form.label :town, "City" %>
-        <%= form.text_field :town, class:"form-control" %>
+        <%= form.label :town, "City (required)" %>
+        <%= form.text_field :town, class:"form-control", placeholder: "Austin" %>
     </article>
 
     <article class="container d-flex align-items-center">
         <div class="w-25">
             <%= form.label :state %>
-            <%= form.text_field :state, class:"form-control" %>
+            <%= form.text_field :state, class:"form-control", placeholder: "TX" %>
         </div>
 
         <div class="w-25 mx-2">
-            <%= form.label :zipcode, "Zip code" %>
-            <%= form.text_field :zipcode, class:"form-control" %>
+            <%= form.label :zipcode, "Zip code (required)" %>
+            <%= form.text_field :zipcode, class:"form-control", placeholder: "78704" %>
         </div>
 
     </article>
 
     <article class="py-3 px-2">
             <%= form.label :country %>
-            <%= form.country_select :country, class:"form-control" %>    </article>
+            <%= form.country_select :country, class:"form-control" %>
+    </article>
 
     <article class="py-3 px-2">
         <%= form.submit class:"btn btn-dark w-100 rounded-5" %>

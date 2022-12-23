@@ -1,7 +1,7 @@
 <%= form_with model: [ @person, @person.phone_numbers.build ] do |form| %>
     <article class="container">
-        <%= form.label :phone %>
-        <%= form.text_field :phone, class:"form-control" %>
+        <%= form.label :phone, "Phone number (required)" %>
+        <%= form.text_field :phone, class:"form-control", placeholder: "###-###-####" %>
     </article>
 
     <article class="container">
