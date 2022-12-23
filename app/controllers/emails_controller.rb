@@ -1,14 +1,15 @@
 class EmailsController < ApplicationController
+    # crud | get renders as partial under person view
+
+    # crud | post /people/:person_id/emails/?
     def create
         @person = Person.find(params[:person_id])
         @email = @person.emails.create(email_params)
         redirect_to person_path(@person)
     end
 
-    # crud | updating an email
-    # - route: /people/:person_id/emails/:id
-    def edit
-        # edit | renders view : /emails/edit.html.erb
+    # crud | update  /people/:person_id/emails/:id
+    def edit # view | ../emails/edit.html.erb
         @person = Person.find(params[:person_id])
         @email = @person.emails.find(params[:id])
     end
@@ -24,6 +25,7 @@ class EmailsController < ApplicationController
         end
     end
 
+    # crud | delete /person/:person_id/phone_numbers/:id
     def destroy
         @person = Person.find(params[:person_id])
         @email = @person.emails.find(params[:id])

@@ -1,7 +1,6 @@
 # MVC | controller
 class PeopleController < ApplicationController
-
-  # crud | read get routes
+  # crud | get routes: /people/ & people/:id
   def index # view /people/index.html.erb
     @people = Person.all
   end
@@ -10,7 +9,7 @@ class PeopleController < ApplicationController
     @person = Person.find(params[:id])
   end
 
-  # crud | create post routes
+  # crud | post /people/?
   def new # view | ../people/new.html.erb
     @person = Person.new
   end
@@ -27,7 +26,7 @@ class PeopleController < ApplicationController
     end
   end
 
-  # crud | update routes
+  # crud | update /people/:id
   def edit # view | ../people/edit.html.erb
     @person = Person.find(params[:id])
   end
@@ -41,7 +40,7 @@ class PeopleController < ApplicationController
     end
   end
 
-  # crud | delete route
+  # crud | delete /people/:id
   def destroy
     # fetches & deletes person
     @person = Person.find(params[:id])
