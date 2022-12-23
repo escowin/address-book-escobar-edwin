@@ -10,10 +10,10 @@ one:
   comment: Sea urchin ceviche
       
 two:
-  salutation: MyString
-  firstname: MyString
-  middlename: MyString
-  lastname: MyString
-  ssn: MyInteger
-  dob: MyString
-  comment: MyText
+  salutation: null
+  firstname: Paul
+  middlename: null
+  lastname: Allen
+  ssn: null
+  dob: null
+  comment: null

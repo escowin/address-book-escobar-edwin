@@ -21,6 +21,12 @@ class PersonTest < ActiveSupport::TestCase
     assert_not person.save, "Saved the person without lastname"
   end
 
-
-
+  # testing against fixtures
+  test "person has null optional values" do
+    assert_equal nil, people(:two).salutation
+    assert_equal nil, people(:two).middlename
+    assert_equal nil, people(:two).ssn
+    assert_equal nil, people(:two).dob
+    assert_equal nil, people(:two).comment
+  end
 end
