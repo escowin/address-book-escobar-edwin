@@ -1,4 +1,46 @@
 <div class="container d-flex flex-column border rounded-5 p-3 my-3">
     <h1 class="text-center">Edit address</h2>
-    <%= render 'form' %>
+
+    <%= form_with model: [ @address.person, @address], local: true do |form| %>
+    <article class="container">
+        <%= form.label :street, "Street (required)" %>
+        <%= form.text_field :street, class:"form-control", placeholder: "1000 South Congress Ave" %>
+        <% @person.errors.full_messages_for(:street).each do |message| %>
+            <div><%= message %></div>
+        <% end %>
+    </article>
+
+    <article class="container">
+        <%= form.label :town, "City (required)" %>
+        <%= form.text_field :town, class:"form-control", placeholder: "Austin" %>
+        <% @person.errors.full_messages_for(:town).each do |message| %>
+            <div><%= message %></div>
+        <% end %>
+    </article>
+
+    <article class="container d-flex align-items-center">
+        <div class="w-25">
+            <%= form.label :state %>
+            <%= form.text_field :state, class:"form-control", placeholder: "TX" %>
+        </div>
+
+        <div class="w-25 mx-2">
+            <%= form.label :zipcode, "Zip code (required)" %>
+            <%= form.text_field :zipcode, class:"form-control", placeholder: "78704" %>
+            <% @person.errors.full_messages_for(:zipcode).each do |message| %>
+                <div><%= message %></div>
+            <% end %>
+        </div>
+
+    </article>
+
+    <article class="py-3 px-2">
+            <%= form.label :country %>
+            <%= form.country_select :country, class:"form-control" %>
+    </article>
+
+    <article class="py-3 px-2">
+        <%= form.submit class:"btn btn-dark w-100 rounded-5" %>
+    </article>
+<% end %>
 </div>

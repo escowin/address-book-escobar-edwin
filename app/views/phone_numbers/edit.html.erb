@@ -1,4 +1,21 @@
 <div class="container d-flex flex-column border rounded-5 p-3 my-3">
     <h1 class="text-center">Edit phone number</h1>
-    <%= render 'form' %>
+    <%= form_with model: [ @phone_number.person, @phone_number], local: true do |form| %>
+    <article class="container">
+        <%= form.label :phone, "Phone number (required)" %>
+        <%= form.text_field :phone, class:"form-control", placeholder: "###-###-####" %>
+        <% @person.errors.full_messages_for(:phone).each do |message| %>
+            <div><%= message %></div>
+        <% end %>
+    </article>
+
+    <article class="container">
+        <%= form.label :comment %>
+        <%= form.text_area :comment, class:"form-control" %>
+    </article>
+
+    <article class="py-3 px-2">
+        <%= form.submit class:"btn btn-dark w-100 rounded-5" %>
+    </article>
+<% end %>
 </div>

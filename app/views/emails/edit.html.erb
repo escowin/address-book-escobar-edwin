@@ -1,4 +1,20 @@
 <div class="container d-flex flex-column border rounded-5 p-3 my-3">
     <h1 class="text-center">Edit email</h1>
-    <%= render "form" %>
-</div>
+    <%= form_with model: [ @email.person, @email], local: true do |form| %>
+        <article class="container">
+            <%= form.label :email, "Email (required)" %>
+            <%= form.text_field :email, class:"form-control", placeholder: "user@email.com" %>
+            <% @person.errors.full_messages_for(:email).each do |message| %>
+                <div><%= message %></div>
+            <% end %>
+        </article>
+
+        <article class="container">
+            <%= form.label :comment %>
+            <%= form.text_area :comment, class:"form-control" %>
+        </article>
+
+        <article class="py-3 px-2">
+            <%= form.submit class:"btn btn-dark w-100 rounded-5" %>
+        </article>
+    <% end %></div>
