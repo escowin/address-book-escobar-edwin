@@ -52,6 +52,7 @@ class PeopleController < ApplicationController
   private
     def person_params
       params.require(:person).permit(
+        :salutation,
         :firstname,
         :middlename,
         :lastname,
