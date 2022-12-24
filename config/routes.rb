@@ -18,7 +18,7 @@ Rails.application.routes.draw do
   # people | ./controllers/persons_controller.rb
   resources :people do
     # nested entities
-    resources :addresses
+    resources :addresses, only: [:create, :edit, :update, :destroy]
     resources :emails
     resources :phone_numbers
   end

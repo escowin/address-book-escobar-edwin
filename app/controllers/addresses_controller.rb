@@ -20,9 +20,8 @@ class AddressesController < ApplicationController
         # route | /people/:person_id/addresses/:id 
         @person = Person.find(params[:person_id])
         @address = @person.addresses.find(params[:id])
-        # ::bug:: update method behaves as create. 
         if @address.update(address_params)
-            redirect_to person_path(@person)
+            redirect_to person_path(@address.person)
         else
             render :edit, status: :unprocessable_entity
         end

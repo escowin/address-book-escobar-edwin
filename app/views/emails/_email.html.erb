@@ -9,7 +9,8 @@
     </button>
 
     <button class="btn btn-dark mx-1">
-        <%= link_to "Delete", person_path(@person), class:"text-decoration-none text-light", data: {
+        <%# ::bug:: clicking button does not delete address %>
+        <%= link_to "Destroy", person_path(@person), class:"text-decoration-none text-light", data: {
             turbo_method: :delete,
             turbo_confirm: "Delete email?"
             } %>

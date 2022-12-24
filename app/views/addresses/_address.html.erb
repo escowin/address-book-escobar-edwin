@@ -29,7 +29,7 @@
     </button>
 
     <button class="btn btn-dark mx-1">
-    <%# ::bug:: does not display people/show.html/ %>
+    <%# ::bug:: clicking button does not delete address %>
         <%= link_to "Delete", person_path(@person), class:"text-decoration-none text-light", data: {
             turbo_method: :delete,
             turbo_confirm: "Delete address?"

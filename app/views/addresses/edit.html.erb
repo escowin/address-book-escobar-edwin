@@ -1,4 +1,5 @@
 <div class="container d-flex flex-column border rounded-5 p-3 my-3">
     <h1 class="text-center">Edit address</h2>
-    <%= render "form", address: @address %>
+    <%# ::bug:: form renders as create address %>
+    <%= render 'form' %>
 </div>

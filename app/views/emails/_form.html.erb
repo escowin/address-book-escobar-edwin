@@ -1,3 +1,6 @@
+<%# ::bug:: form_with model can either be:
+- person#show | model: [ @person, @person.emails.build ] | create submit at person & address views
+- emails#edit |  model: [ @email.person, @email], local: true | update submit at email view, but breaks person view %>
 <%= form_with model: [ @person, @person.emails.build ] do |form| %>
     <article class="container">
         <%= form.label :email, "Email (required)" %>

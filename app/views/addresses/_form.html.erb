@@ -1,3 +1,6 @@
+<%# ::bug:: form_with model can either be:
+- person#show | model: [ @person, @person.addresses.build ] | create submit at person & address views
+- addresses#edit |  model: [ @address.person, @address], local: true | update submit at address view, but breaks person view %>
 <%= form_with model: [ @person, @person.addresses.build ] do |form| %>
     <article class="container">
         <%= form.label :street, "Street (required)" %>
