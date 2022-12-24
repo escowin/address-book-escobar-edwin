@@ -10,14 +10,17 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_12_22_015540) do
+ActiveRecord::Schema[7.0].define(version: 2022_12_24_050911) do
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
+
   create_table "addresses", force: :cascade do |t|
     t.string "street"
     t.string "town"
     t.integer "zipcode"
     t.string "state"
     t.string "country"
-    t.integer "person_id", null: false
+    t.bigint "person_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["person_id"], name: "index_addresses_on_person_id"
@@ -26,7 +29,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_12_22_015540) do
   create_table "emails", force: :cascade do |t|
     t.string "email"
     t.text "comment"
-    t.integer "person_id", null: false
+    t.bigint "person_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["person_id"], name: "index_emails_on_person_id"
@@ -37,7 +40,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_12_22_015540) do
     t.string "firstname"
     t.string "middlename"
     t.string "lastname"
-    t.integer "ssn"
+    t.string "ssn"
     t.string "dob"
     t.text "comment"
     t.datetime "created_at", null: false
@@ -45,9 +48,9 @@ ActiveRecord::Schema[7.0].define(version: 2022_12_22_015540) do
   end
 
   create_table "phone_numbers", force: :cascade do |t|
-    t.integer "phone"
+    t.string "phone"
     t.text "comment"
-    t.integer "person_id", null: false
+    t.bigint "person_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["person_id"], name: "index_phone_numbers_on_person_id"
