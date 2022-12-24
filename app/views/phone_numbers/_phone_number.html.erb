@@ -9,7 +9,7 @@
     </button>
 
     <button class="btn btn-dark mx-1">
-        <%= link_to "Delete", person_path(@person), class:"text-decoration-none text-light", data: {
+        <%= link_to "Delete", [phone_number.person, phone_number], class:"text-decoration-none text-light", data: {
             turbo_method: :delete,
             turbo_confirm: "Delete phone number?"
             } %>

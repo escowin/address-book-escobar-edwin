@@ -40,13 +40,12 @@ class PeopleController < ApplicationController
     end
   end
 
-  # crud | delete /people/:id | ::bug:: does not destroy
+  # crud | delete /people/:id |
   def destroy
     # fetches & deletes person
     @person = Person.find(params[:id])
-    # ::bug:: destroy method fails
     @person.destroy
-    # redirect | /people/ | ::bug:: redirects to /people/:id not /people
+    # redirect | /people/ |
     redirect_to people_path, status: :see_other
   end
 

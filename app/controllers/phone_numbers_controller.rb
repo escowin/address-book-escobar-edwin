@@ -1,20 +1,23 @@
 class PhoneNumbersController < ApplicationController
     # crud | get renders as partial under person view
 
-    # crud | post /people/:person_id/phone_numbers/?
+    # crud | post a new phone number |
     def create
+        # route | /people/:person_id/phone_numbers/?
         @person = Person.find(params[:person_id])
         @phone_number = @person.phone_numbers.create(phone_params)
         redirect_to person_path(@person)
     end
 
-    # crud | update /people/:person_id/phone_numbers/:id
+    # crud | update a phone number |
     def edit # view | ../phone_numbers/edit.html.erb
+        # route | /people/:person_id/phone_numbers/:id
         @person = Person.find(params[:person_id])
         @phone_number = @person.phone_numbers.find(params[:id])
     end
 
     def update
+        # route | /people/:person_id/phone_numbers/:id
         @person = Person.find(params[:person_id])
         @phone_number = @person.phone_numbers.find(params[:id])
         @phone_number.update(phone_params)
@@ -25,8 +28,9 @@ class PhoneNumbersController < ApplicationController
         end
     end
 
-    # crud | delete /people/:person_id/phone_numbers/:id
+    # crud | delete a person |
     def destroy
+        # route | /people/:person_id/phone_numbers/:id
         @person = Person.find(params[:person_id])
         @phone_number = @person.phone_numbers.find(params[:id])
         @phone_number.destroy

@@ -1,7 +1,7 @@
 class AddressesController < ApplicationController
     # crud | get renders as partial under person view |
 
-    # crud | post a new person |
+    # crud | post a new address |
     def create
         # route | /people/:person_id/phone_numbers/?
         @person = Person.find(params[:person_id])
@@ -9,7 +9,7 @@ class AddressesController < ApplicationController
         redirect_to person_path(@person)
     end
 
-    # crud | update a person |
+    # crud | update an address |
     def edit # view | ../phone_numbers/edit.html.erb
         # route | /people/:person_id/addresses/:id 
         @person = Person.find(params[:person_id])
@@ -27,14 +27,13 @@ class AddressesController < ApplicationController
         end
     end
 
-    # crud | delete a person | 
+    # crud | delete an address | 
     def destroy
         #  route | /people/:person_id/addresses/:id
         @person = Person.find(params[:person_id])
         @address = @person.addresses.find(params[:id])
-        #  ::bug:: destroy method fails, see: views/addresses/_address.html.erb:32
         @address.destroy
-        #  redirect | /people/ | ::bug:: edit & update behave as new & create. 
+        #  redirect | /people/
         redirect_to person_path(@person)
     end
 
