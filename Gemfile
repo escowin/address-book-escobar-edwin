@@ -74,3 +74,4 @@ end
 gem "cssbundling-rails", "~> 1.1"
 
 gem 'country_select', '~> 6.0'
+gem "jsbundling-rails", "~> 1.1"

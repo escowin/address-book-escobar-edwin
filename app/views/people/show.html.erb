@@ -1,5 +1,5 @@
 <h1 class="text-center">Contact</h1>
-<section id="person-section" class="container d-flex flex-wrap border rounded-5 p-3 mb-3">
+<section id="person-section" class="container d-flex flex-wrap border rounded-5 p-3 mb-3 ">
     <h2 class="w-100"><%= @person.salutation %> <%= @person.firstname %> <%= @person.middlename %> <%= @person.lastname %></h2>
     <article class="w-50">
         <p class="fw-semibold mb-1">SSN</p>
@@ -55,7 +55,7 @@
 
 <section class="container d-flex flex-wrap p-3 mb-3">
     <button class="btn btn-dark mx-1 w-100 rounded-5">
-    <%= link_to "Delete person", person_path(@person), class:"text-decoration-none text-light", data: {
+    <%= link_to "Delete person", people_path, class:"text-decoration-none text-light", data: {
         turbo_method: :delete,
         turbo_confirm: "Confirm deletion"
         } %></button>

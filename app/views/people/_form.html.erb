@@ -7,7 +7,7 @@
                 <%= form.select :salutation, ["Mr.", "Ms.", "Mrs.", "Lord", "Lady"], class:"form-control w-auto mx-1" %>
 
                 <%= form.label "First", class: "d-none" %>
-                <%= form.text_field :firstname, class:"form-control", placeholder: "First" %>
+                <%= form.text_field :firstname, class:"form-control ms-3", placeholder: "First name" %>
                 <% person.errors.full_messages_for(:firstname).each do |message| %>
                     <div><%= message %></div>
                 <% end %>
@@ -23,7 +23,7 @@
 
         <article class="mb-3 col">
             <%= form.label "Last", class: "d-none" %>
-            <%= form.text_field :lastname, class:"form-control", placeholder: "Last" %>
+            <%= form.text_field :lastname, class:"form-control", placeholder: "Last name" %>
             <% person.errors.full_messages_for(:lastname).each do |message| %>
                 <div><%= message %></div>
             <% end %>
@@ -33,7 +33,7 @@
     <section class="mb-3 border rounded-5 p-3" id="details-section">
         <h3>Details</h3>
         <div class="row">
-            <article class="mb-3 col-7">
+            <article class="mb-3 col-lg-6">
                 <%= form.label :ssn, "Social Security Number (optional)" %>
                 <%= form.text_field :ssn, class:"form-control text-center", placeholder: "###-##-####" %>
                 <% person.errors.full_messages_for(:ssn).each do |message| %>
@@ -41,10 +41,10 @@
                 <% end %>
             </article>
 
-            <article class="mb-3 col-5 d-flex flex-column">
+            <article class="mb-3 col-lg-6 d-flex flex-column">
                 <%= form.label :dob, "Date of birth (optional)" %>
-                <div>
-                <%= form.date_select :dob, class:"form-control text-center" %>
+                <div class="d-sm-flex">
+                    <%= form.text_field :dob, class:"form-control text-center" %>
                 </div>
                 <% person.errors.full_messages_for(:dob).each do |message| %>
                     <div><%= message %></div>
