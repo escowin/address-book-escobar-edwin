@@ -5,11 +5,14 @@
     <article class="container">
         <%= form.label :phone, "Phone number (required)" %>
         <%= form.text_field :phone, class:"form-control", placeholder: "###-###-####" %>
+        <% @person.errors.full_messages_for(:phone).each do |message| %>
+            <div><%= message %></div>
+        <% end %>
     </article>
 
     <article class="container">
         <%= form.label :comment %>
-        <%= form.text_field :comment, class:"form-control" %>
+        <%= form.text_area :comment, class:"form-control" %>
     </article>
 
     <article class="py-3 px-2">

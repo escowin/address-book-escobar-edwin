@@ -55,7 +55,7 @@
 
     <section class="mb-3 border rounded-5 p-3" id="comment-section">
         <%= form.label :comment, class: "form-label h3" %>
-        <%= form.text_field :comment, class:"form-control", placeholder: "Comments (optional)" %>
+        <%= form.text_area :comment, class:"form-control", placeholder: "Comments (optional)" %>
         <% person.errors.full_messages_for(:comment).each do |message| %>
             <div><%= message %></div>
         <% end %>
