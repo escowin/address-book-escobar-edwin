@@ -19,10 +19,13 @@ class PeopleController < ApplicationController
     @person = Person.new(person_params)
     
     # attempts to save person; action maps to POST /people; checks validations
-    if @person.save
-      redirect_to @person
-    else
-      render :new, status: :unprocessable_entity
+    respond_to do |format|
+      if @person.save
+        format.html { redirect_to @person, notice: "person successfully created." }
+        format.json { render :show, status: :created, location: @person }
+      else
+        render :new, status: :unprocessable_entity
+      end
     end
   end
 
