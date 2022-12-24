@@ -1,0 +1,185 @@
+
+---
+addresses:
+  columns:
+  - id
+  - street
+  - town
+  - zipcode
+  - state
+  - country
+  - person_id
+  - created_at
+  - updated_at
+  records: 
+  - - 1
+    - Downtown
+    - Manhatten
+    - ''
+    - NY
+    - ''
+    - 1
+    - '2022-12-20 00:43:24.647194'
+    - '2022-12-20 00:43:24.647194'
+  - - 8
+    - Testing the editing
+    - Austin
+    - '78740'
+    - ''
+    - AF
+    - 7
+    - '2022-12-24 02:06:30.228600'
+    - '2022-12-24 02:07:18.184384'
+
+---
+ar_internal_metadata:
+  columns:
+  - key
+  - value
+  - created_at
+  - updated_at
+  records: 
+  - - environment
+    - development
+    - '2022-12-16 21:57:48.468129'
+    - '2022-12-16 21:57:48.468129'
+
+---
+emails:
+  columns:
+  - id
+  - email
+  - comment
+  - person_id
+  - created_at
+  - updated_at
+  records: 
+  - - 1
+    - patrick@pierceandpierce
+    - ''
+    - 1
+    - '2022-12-20 02:13:34.590388'
+    - '2022-12-20 02:13:34.590388'
+  - - 3
+    - patrick@pierceandpierce.com
+    - ''
+    - 1
+    - '2022-12-22 20:06:54.412616'
+    - '2022-12-22 20:06:54.412616'
+  - - 4
+    - edit@test.com
+    - ''
+    - 1
+    - '2022-12-22 20:10:59.883084'
+    - '2022-12-22 20:10:59.883084'
+  - - 6
+    - test@emails.com
+    - ''
+    - 3
+    - '2022-12-24 01:32:25.348788'
+    - '2022-12-24 01:32:25.348788'
+  - - 7
+    - edit@mail.com
+    - ''
+    - 7
+    - '2022-12-24 02:08:04.980344'
+    - '2022-12-24 02:08:24.791293'
+
+---
+people:
+  columns:
+  - id
+  - salutation
+  - firstname
+  - middlename
+  - lastname
+  - ssn
+  - dob
+  - comment
+  - created_at
+  - updated_at
+  records: 
+  - - 1
+    - Mr.
+    - Patrick
+    - ''
+    - Bateman
+    - ''
+    - ''
+    - Sea urchin ceviche
+    - '2022-12-16 22:04:35.137081'
+    - '2022-12-17 23:08:25.638575'
+  - - 3
+    - Lord
+    - David
+    - ''
+    - Van Patten
+    - ''
+    - ''
+    - Ed Gein? The maitre 'd at Canal Bar?
+    - '2022-12-17 22:46:00.706357'
+    - '2022-12-24 02:34:57.290747'
+  - - 7
+    - Mrs.
+    - Courtney
+    - ''
+    - Rawlinson
+    - ''
+    - ''
+    - ''
+    - '2022-12-24 01:43:15.567722'
+    - '2022-12-24 02:30:03.266229'
+
+---
+phone_numbers:
+  columns:
+  - id
+  - phone
+  - comment
+  - person_id
+  - created_at
+  - updated_at
+  records: 
+  - - 4
+    - 123-456-7899
+    - ''
+    - 1
+    - '2022-12-20 03:50:13.938328'
+    - '2022-12-20 03:50:13.938328'
+  - - 6
+    - '123213'
+    - ''
+    - 1
+    - '2022-12-23 15:26:29.694431'
+    - '2022-12-23 15:26:29.694431'
+  - - 8
+    - '1233534636'
+    - ''
+    - 7
+    - '2022-12-24 02:09:27.325765'
+    - '2022-12-24 02:09:27.325765'
+
+---
+users:
+  columns:
+  - id
+  - email
+  - password_digest
+  - created_at
+  - updated_at
+  records: 
+  - - 1
+    - user@test.com
+    - "$2a$12$1uBCHfqpuB06maec5iIn4OWKh13lX52NFbG/LYSUErZv729wKGgHC"
+    - '2022-12-22 02:40:13.202306'
+    - '2022-12-22 02:40:13.202306'
+  - - 2
+    - user-2@test.com
+    - "$2a$12$auhxobws9yAthy80vmXpfuTPSNm5yvI8ANRWdefGWlL4JVmflqIU."
+    - '2022-12-22 06:09:36.387653'
+    - '2022-12-22 06:09:36.387653'
+  - - 3
+    - third@test.com
+    - "$2a$12$wL/VfVOzXPPeKzStzYEcIOwJdnqP7JLgDGaEqgGn0SXOwYOk58BUe"
+    - '2022-12-23 00:57:31.790082'
+    - '2022-12-23 00:57:31.790082'
