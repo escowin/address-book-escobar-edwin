@@ -26,7 +26,7 @@ class PeopleController < ApplicationController
     end
   end
 
-  # crud | update /people/:id | ::bug:: edit & update behave as new & create. 
+  # crud | update /people/:id |
   def edit # view | ../people/edit.html.erb
     @person = Person.find(params[:id])
   end
@@ -44,6 +44,7 @@ class PeopleController < ApplicationController
   def destroy
     # fetches & deletes person
     @person = Person.find(params[:id])
+    # ::bug:: destroy method fails
     @person.destroy
     # redirect | /people/ | ::bug:: redirects to /people/:id not /people
     redirect_to people_path, status: :see_other
