@@ -4,7 +4,8 @@
         <h3 class="form-label">Name</h3>
 
         <article class="mb-3 d-flex">
-                <%= form.select :salutation, ["Mr.", "Ms.", "Mrs.", "Lord", "Lady"], class:"form-control w-auto mx-1" %>
+        <%# ::bug:: failing to caputre selected option value %>
+                <%= form.select :salutation, ["Mr.", "Ms.", "Mrs.", "Lord", "Lady"], include_blank: true, class:"form-control w-auto mx-1" %>
 
                 <%= form.label "First", class: "d-none" %>
                 <%= form.text_field :firstname, class:"form-control ms-3", placeholder: "First name" %>
