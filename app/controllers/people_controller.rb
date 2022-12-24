@@ -22,6 +22,7 @@ class PeopleController < ApplicationController
     respond_to do |format|
       if @person.save
         format.html { redirect_to @person, notice: "person successfully created." }
+        # parsed as json object for send requests / responses
         format.json { render :show, status: :created, location: @person }
       else
         render :new, status: :unprocessable_entity
